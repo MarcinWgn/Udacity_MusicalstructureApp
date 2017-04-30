@@ -19,9 +19,17 @@
         <activity
             android:name=".SongsActivity"
             android:label="@string/songs"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".GenreActivity"
+            android:label="@string/genre"
+            android:parentActivityName=".MainActivity"/>
+
+        <activity
+            android:name=".ArtistActivity"
+            android:label="@string/artist"
             android:parentActivityName=".MainActivity">
         </activity>
-
     </application>
 
 </manifest>

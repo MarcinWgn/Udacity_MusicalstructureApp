@@ -1,8 +1,8 @@
 package com.example.marcin.wegrzyn.musicalstructureapp;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -36,12 +36,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         artistButton.setOnClickListener(this);
         genreButton.setOnClickListener(this);
 
-
     }
 
     private void startSongsActivity() {
         Intent songsIntent = new Intent(MainActivity.this,SongsActivity.class);
         startActivity(songsIntent);
+    }
+
+    private void startArtistActivity() {
+        Intent artistIntent = new Intent(MainActivity.this,ArtistActivity.class);
+        startActivity(artistIntent);
+    }
+
+    private void startGenreActivity() {
+        Intent genreIntent = new Intent(MainActivity.this,GenreActivity.class);
+        startActivity(genreIntent);
     }
 
     @Override
@@ -53,8 +62,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Toast.makeText(getBaseContext(),getResources().getText(play),Toast.LENGTH_SHORT).show();
         else if(id==R.id.nextBtn)
             Toast.makeText(getBaseContext(),getResources().getText(next),Toast.LENGTH_SHORT).show();
-        else if (id==R.id.songsBtn)
+        else if(id==R.id.songsBtn)
             startSongsActivity();
-
+        else if(id==R.id.artistBtn)
+            startArtistActivity();
+        else if(id==R.id.genreBtn)
+            startGenreActivity();
     }
 }
