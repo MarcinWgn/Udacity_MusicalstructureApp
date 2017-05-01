@@ -3,8 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:layout_margin="8dp"
+    android:orientation="vertical"
     tools:context="com.example.marcin.wegrzyn.musicalstructureapp.MainActivity">
 
     <LinearLayout
@@ -15,18 +15,18 @@
 
         <Button
             android:id="@+id/songsBtn"
-            android:text="@string/songs"
-            style="@style/headerButtonStyle" />
+            style="@style/headerButtonStyle"
+            android:text="@string/songs" />
 
         <Button
             android:id="@+id/artistBtn"
-            android:text="@string/artist"
-            style="@style/headerButtonStyle" />
+            style="@style/headerButtonStyle"
+            android:text="@string/artist" />
 
         <Button
             android:id="@+id/genreBtn"
-            android:text="@string/genre"
-            style="@style/headerButtonStyle" />
+            style="@style/headerButtonStyle"
+            android:text="@string/genre" />
 
     </LinearLayout>
 
@@ -45,16 +45,18 @@
 
         <Button
             android:id="@+id/prevBtn"
-            android:text="@string/prev"
-            style="@style/bottomButtonStyle" />
+            style="@style/bottomButtonStyle"
+            android:text="@string/prev" />
+
         <Button
             android:id="@+id/playBtn"
-            android:text="@string/play"
-            style="@style/bottomButtonStyle" />
+            style="@style/bottomButtonStyle"
+            android:text="@string/play" />
+
         <Button
             android:id="@+id/nextBtn"
-            android:text="@string/next"
-            style="@style/bottomButtonStyle" />
+            style="@style/bottomButtonStyle"
+            android:text="@string/next" />
 
     </LinearLayout>
 
