@@ -8,10 +8,9 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import static com.example.marcin.wegrzyn.musicalstructureapp.R.string.next;
-import static com.example.marcin.wegrzyn.musicalstructureapp.R.string.play;
 import static com.example.marcin.wegrzyn.musicalstructureapp.R.string.prev;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,14 +26,44 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Button artistButton = (Button) findViewById(R.id.artistBtn);
         Button genreButton = (Button) findViewById(R.id.genreBtn);
 
+//         changed the listening to an anonymous class
+        prevButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getBaseContext(),getResources().getText(prev),Toast.LENGTH_SHORT).show();
+            }
+        });
+        playButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getBaseContext(), R.string.to_play,Toast.LENGTH_SHORT).show();
+            }
+        });
+        nextButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getBaseContext(),getResources().getText(next),Toast.LENGTH_SHORT).show();
+            }
+        });
 
-        prevButton.setOnClickListener(this);
-        playButton.setOnClickListener(this);
-        nextButton.setOnClickListener(this);
-
-        songsButton.setOnClickListener(this);
-        artistButton.setOnClickListener(this);
-        genreButton.setOnClickListener(this);
+        songsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startSongsActivity();
+            }
+        });
+        artistButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startArtistActivity();
+            }
+        });
+        genreButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startGenreActivity();
+            }
+        });
 
     }
 
@@ -53,20 +82,4 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         startActivity(genreIntent);
     }
 
-    @Override
-    public void onClick(View v) {
-        int id = v.getId();
-        if(id==R.id.prevBtn)
-            Toast.makeText(getBaseContext(),getResources().getText(prev),Toast.LENGTH_SHORT).show();
-        else if(id==R.id.playBtn)
-            Toast.makeText(getBaseContext(),getResources().getText(play),Toast.LENGTH_SHORT).show();
-        else if(id==R.id.nextBtn)
-            Toast.makeText(getBaseContext(),getResources().getText(next),Toast.LENGTH_SHORT).show();
-        else if(id==R.id.songsBtn)
-            startSongsActivity();
-        else if(id==R.id.artistBtn)
-            startArtistActivity();
-        else if(id==R.id.genreBtn)
-            startGenreActivity();
-    }
 }

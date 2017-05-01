@@ -6,11 +6,13 @@
     <string name="prev">prev</string>
     <string name="play">play</string>
     <string name="next">next</string>
-    <string name="text_main_activity">This is the player screen, you can go to the library of songs, artists and genre</string>
+    <string name="text_main_activity">This is the player screen, you can go to the library of songs, artists and genre. To play music I could have MediaPlayer class and AudioManager class</string>
     <string name="share">share</string>
     <string name="select">select</string>
     <string name="music_palyer">Music Player</string>
     <string name="text_songs">This is a library of songs, you can choose a song to play or send a name to a friend.</string>
     <string name="text_genre">This is the genre library screen, you can select an genre and you will be redirected to the genres play list or send the genre to a friend.</string>
     <string name="text_artist">This is the artist library screen, you can select an artist and you will be redirected to the artist\'s play list or send the artists name to a friend.</string>
+   <!--Adding information about how to use the framework to play music-->
+    <string name="to_play">To play music I could have MediaPlayer class and AudioManager class</string>
 </resources>

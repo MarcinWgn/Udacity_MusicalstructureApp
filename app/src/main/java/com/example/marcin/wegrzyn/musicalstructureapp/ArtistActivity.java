@@ -6,7 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
-public class ArtistActivity extends AppCompatActivity implements View.OnClickListener {
+public class ArtistActivity extends AppCompatActivity {
 
     private String artist = "Artist";
 
@@ -18,8 +18,19 @@ public class ArtistActivity extends AppCompatActivity implements View.OnClickLis
         Button selectButton = (Button) findViewById(R.id.selectBTn);
         Button shareButton = (Button) findViewById(R.id.shareBtn);
 
-        selectButton.setOnClickListener(this);
-        shareButton.setOnClickListener(this);
+//      changed the listening to an anonymous class
+        selectButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startSongActivity();
+            }
+        });
+        shareButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                share(artist);
+            }
+        });
 
     }
 
@@ -40,13 +51,4 @@ public class ArtistActivity extends AppCompatActivity implements View.OnClickLis
         }
     }
 
-
-    @Override
-    public void onClick(View v) {
-        int id = v.getId();
-        if (id==R.id.selectBTn)
-            startSongActivity();
-        else if (id==R.id.shareBtn)
-            share(artist);
-    }
 }
